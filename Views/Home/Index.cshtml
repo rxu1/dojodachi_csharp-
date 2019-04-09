@@ -1,0 +1,27 @@
+﻿@model Pet
+<div class="container-fluid">
+  <div class="row col-md-12">
+    <h4>Fullness: @Model.Fullness, &nbsp</h4>
+    <h4>Happiness: @Model.Happiness, &nbsp</h4>
+    <h4>Meals: @Model.Meals, &nbsp</h4>
+    <h4>Energy: @Model.Energy</h4>
+    <br>
+  </div>
+    <p class="text-danger">@Model.Status</p>
+  <div class="row col-md-12">
+    @{
+      if(!@Model.isDead)
+      {
+        <a href="/feed" class="btn btn-primary" style="margin-right: 10px">Feed</a>
+        <a href="/play" class="btn btn-primary" style="margin-right: 10px">Play</a>
+        <a href="/work" class="btn btn-primary" style="margin-right: 10px">Work</a>
+        <a href="/sleep"class="btn btn-primary" style="margin-right: 10px">Sleep</a>
+      }
+      else 
+      {
+        <a href="/reset" class="btn btn-secondary">Reset</a>
+      }
+    }
+  </div>
+</div>
+
